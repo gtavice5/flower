@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.jkxy.model.Category" table="Category" catalog="flower">
+		<!-- 生成对象唯一的OID标识符 -->
+		<id name="id" column="id" type="integer">
+			<generator class="identity"/>
+		</id>
+	
+		<property name="categoryName" type="java.lang.String">
+			<column name="categoryName" length="30"></column>
+		</property>
+		<set name="goodsSet" inverse="true">
+			<key>
+				<column name="categoryId"></column>
+			</key>
+			<one-to-many class="com.jkxy.model.Goods"/>
+		</set>
+		
+	</class>
+
+</hibernate-mapping>

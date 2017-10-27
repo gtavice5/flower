@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.jkxy.model.OrdersDetails" table="ordersDetails" catalog="flower">
+		<!-- 生成对象唯一的OID标识符 -->
+		<id name="id" column="id" type="integer">
+			<generator class="identity"/>
+		</id>
+	
+		<many-to-one name="orders" class="com.jkxy.model.Orders" fetch="select">
+			<column name="ordersId"></column>
+		</many-to-one>
+
+		<property name="goodsName" type="java.lang.String" length="50"/>
+		
+		<property name="Price" type="big_decimal"/>
+		
+		<property name="num" type="java.lang.Integer"/>
+		
+	</class>
+
+</hibernate-mapping>

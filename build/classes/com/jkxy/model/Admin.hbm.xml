@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.jkxy.model.Admin" table="admin" catalog="flower">
+		<!-- 生成对象唯一的OID标识符 -->
+		<id name="adminId" type="integer">
+			<generator class="native"/>
+		</id>
+	
+		<property name="username" type="string">
+			<column name="username" length="30"></column>
+		</property>
+		
+		<property name="password" type="string">
+			<column name="password" length="30"></column>
+		</property>
+		
+	</class>
+
+</hibernate-mapping>
